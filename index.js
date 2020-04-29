@@ -27,7 +27,7 @@ if (mongoUri) {
 else if (process.env.MONGODB_URL){
 	dbConnectionUrl = process.env.MONGODB_URL || 'mongodb://localhost:27017/sampledb';
 	envVarialbeTest = 'debug@@@@@@@' + dbConnectionUrl; 
-	configmapVariableTest = process.env.test;
+	configmapVariableTest = process.env.TEST;
 	console.log(envVarialbeTest);
 	console.log(configmapVariableTest);
 } else {
