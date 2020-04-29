@@ -15,6 +15,7 @@ const dbServiceName = process.env.DATABASE_SERVICE_NAME || 'localhost';
 
 var dbConnectionUrl;
 var envVarialbeTest;
+var configmapVariableTest;
 
 // If the monogo secret has been attached, modify the provided URI to include
 // authentication credentials
@@ -26,7 +27,9 @@ if (mongoUri) {
 else if (process.env.MONGODB_URL){
 	dbConnectionUrl = process.env.MONGODB_URL || 'mongodb://localhost:27017/sampledb';
 	envVarialbeTest = 'debug@@@@@@@' + dbConnectionUrl; 
+	configmapVariableTest = process.env.test;
 	console.log(envVarialbeTest);
+	console.log(configmapVariableTest);
 } else {
 	dbConnectionUrl = 'mongodb://' + mongoUsername + ':' + 
 					mongoPassword + '@' + 
