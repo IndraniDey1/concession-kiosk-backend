@@ -4,11 +4,22 @@ This is the backend component for the concession kiosk application. The backend 
 
 # How to Deploy on OpenShift
 
-```
-oc new-project concession-kiosk
-oc new-app https://github.com/jankleinert/concession-kiosk-backend --name backend
-```
+- oc new-project concession-kiosk
 
-To link the frontend and backend components, you'll provide the backend service name (backend) and port (8080) to the frontend as environment variables.
+- oc new-app https://github.com/IndraniDey1/concession-kiosk-backend --name backend
+
+- oc get svc backend
+
+- oc new-app --template=mongodb-ephemeral
+
+- oc set env dc/backend MONGODB_URL=mongodb://someuser:some-password@mongodb/sampledb
+
+- oc create -f apply config-example.json.   ( see this file in 'example' folder. This is to create configmap)
+
+-oc set env dc/backend --from configmap/config
+
+
+
+
 
 
