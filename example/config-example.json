@@ -1,0 +1,16 @@
+{
+    "kind": "ConfigMap",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "config",
+        "labels": {
+              "app": "backend-app",
+              "environment": "development"
+        }
+    },
+    "data": {
+        "mongodb.db.url": "mongodb://userPOO:RBIMEU02f6isRifF@mongodb/sampledb",
+        "test": "you are reading from configmap"
+     }
+
+}
